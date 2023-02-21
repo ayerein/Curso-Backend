@@ -1,0 +1,32 @@
+<div class="d-flex justify-content-center align-items-center flex-column w-100 mt-5 h-25">
+  <h2 class="mb-4">Vista de productos</h2>
+  {{#if getProducts}}
+    <table class="table table-hover border w-75">
+      <thead>
+        <tr>
+          <th scope="col">Producto</th>
+          <th scope="col">Precio</th>
+          <th scope="col">Stock</th>
+          <th scope="col">Codigo</th>
+        </tr>
+      </thead>
+      <tbody id="tabla">
+          {{#each getProducts}}
+            <tr>
+              <th>{{this.title}}</th>
+              <th>${{this.price}}</th>
+              <th>{{this.code}}</th>
+              <th>{{this.stock}}</th>
+            </tr>
+          {{/each}}
+      </tbody>
+    </table>
+  {{else}}
+    <div class="alert alert-warning" role="alert">
+    No hay productos agregados!
+    </div>
+  {{/if}} 
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/index.js"></script>

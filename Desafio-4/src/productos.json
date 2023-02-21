@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "title": "asdad",
+    "description": "aaa",
+    "price": "550",
+    "stock": "11",
+    "thumbnail": "https://cdn3.iconfinder.com/data/icons/fruits-52/150/icon_fruit_manga-256.png",
+    "code": "111"
+  },
+  {
+    "id": 2,
+    "title": "asdad",
+    "description": "aaa",
+    "price": "550",
+    "stock": "11",
+    "thumbnail": "https://cdn3.iconfinder.com/data/icons/fruits-52/150/icon_fruit_manga-256.png",
+    "code": "111"
+  }
+]
