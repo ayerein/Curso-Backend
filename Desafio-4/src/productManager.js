@@ -66,7 +66,7 @@ class ProductManager{
     deleteProduct = async (id) => {
         let products = await this.getProducts()
         try {
-            if (id > products.length || id < 1) {
+            if (id < 1) {
                 console.log('Id not found')
             } else {
                 let newArray = products.filter(obj => obj.id != id)

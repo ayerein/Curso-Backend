@@ -11,6 +11,7 @@ let tabla = document.getElementById("tabla")
 
 socket.on('sendProducts', (data) => {
     arrayProducts = data
+    tabla.innerHTML = ''
     data.forEach(el => {
         tabla.innerHTML +=  `<tr>
                                 <th>${el.id}</th>
@@ -21,7 +22,6 @@ socket.on('sendProducts', (data) => {
                                 <th><button class="btn btn-light" onclick="deleteProduct(${el.id})">Eliminar</button></th>
                             </tr>`
     });
-
 })
 
 formProduct.addEventListener("submit", e => {
@@ -36,6 +36,7 @@ formProduct.addEventListener("submit", e => {
     }
 
     socket.emit("newProduct", prod)
+    formProduct.reset()
 })
 
 function deleteProduct(id){
