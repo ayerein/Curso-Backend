@@ -9,8 +9,8 @@ let code = document.getElementById("code")
 let stock = document.getElementById("stock")
 let tabla = document.getElementById("tabla")
 
+
 socket.on('sendProducts', (data) => {
-    arrayProducts = data
     tabla.innerHTML = ''
     data.forEach(el => {
         tabla.innerHTML +=  `<tr>
@@ -34,7 +34,6 @@ formProduct.addEventListener("submit", e => {
         stock: stock.value,
         code: code.value
     }
-
     socket.emit("newProduct", prod)
     formProduct.reset()
 })

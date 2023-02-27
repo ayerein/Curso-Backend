@@ -40,10 +40,12 @@ socketServer.on('connection', async socket => {
 
     socket.on('newProduct', async data => {
         await products.addProduct(data)
+        socketServer.emit('sendProducts', (await products.getProducts()))
     })    
 
     socket.on("deleteProduct", async id => {
         await products.deleteProduct(id)
+        socketServer.emit("sendProducts", (await products.getProducts()))
     })
 })
 

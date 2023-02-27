@@ -48,6 +48,7 @@ class ProductManager{
             let newProduct = new Product(id, prods)
             this.#products.push(newProduct)
             await fs.promises.writeFile(this.#path, JSON.stringify(this.#products, null, 2))
+            return this.#products
         } catch (error) {
             console.log(error)
             throw Error(error)
